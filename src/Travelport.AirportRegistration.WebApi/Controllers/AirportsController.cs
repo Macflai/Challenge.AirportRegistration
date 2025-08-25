@@ -10,10 +10,12 @@ namespace Travelport.AirportRegistration.WebApi.Controllers;
 public class AirportsController : ControllerBase
 {
     private readonly IAirportService _airportService;
+    private readonly ILogger<AirportsController> _logger;
 
-    public AirportsController(IAirportService airportService)
+    public AirportsController(IAirportService airportService, ILogger<AirportsController> logger)
     {
         _airportService = airportService;
+        _logger = logger;
     }
 
     [HttpGet]
@@ -61,6 +63,8 @@ public class AirportsController : ControllerBase
         var airport = airportDto.ToEntity();
 
         await _airportService.CreateAsync(airport);
+
+        _logger.LogInformation($"Aiport created with Id {airport.Id}");
 
         return CreatedAtAction(nameof(GetById), new { id = airport.Id }, airport.ToResponseDto());
     }

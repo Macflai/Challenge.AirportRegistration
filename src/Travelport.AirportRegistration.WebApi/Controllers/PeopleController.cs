@@ -10,10 +10,12 @@ namespace Travelport.AirportRegistration.WebApi.Controllers;
 public class PeopleController : ControllerBase
 {
     private readonly IPersonService _personService;
+    private readonly ILogger<PeopleController> _logger;
 
-    public PeopleController(IPersonService personService)
+    public PeopleController(IPersonService personService, ILogger<PeopleController> logger)
     {
         _personService = personService;
+        _logger = logger;
     }
 
     [HttpGet]
@@ -61,6 +63,8 @@ public class PeopleController : ControllerBase
         var person = personDto.ToEntity();
 
         await _personService.CreateAsync(person);
+
+        _logger.LogInformation($"Person created with Id {person.Id}");
 
         return CreatedAtAction(nameof(GetById), new { id = person.Id }, person.ToResponseDto());
     }
