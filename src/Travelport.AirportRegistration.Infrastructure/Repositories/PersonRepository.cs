@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Travelport.AirportRegistration.Domain.Entities;
-using Travelport.AirportRegistration.Infrastructure.Repositories.Interfaces;
+using Travelport.AirportRegistration.Application.Interfaces;
 
 namespace Travelport.AirportRegistration.Infrastructure.Repositories;
 

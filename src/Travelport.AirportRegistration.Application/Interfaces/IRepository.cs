@@ -1,4 +1,4 @@
-﻿namespace Travelport.AirportRegistration.Infrastructure.Repositories.Interfaces;
+﻿namespace Travelport.AirportRegistration.Application.Interfaces;
 
 public interface IRepository<T> where T : class
 {
