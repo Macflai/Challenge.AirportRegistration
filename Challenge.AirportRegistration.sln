@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelport.AirportRegistrat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelport.AirportRegistration.Infrastructure", "src\Travelport.AirportRegistration.Infrastructure\Travelport.AirportRegistration.Infrastructure.csproj", "{C4154624-DBB7-4E66-AE7E-9C396E2F9594}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Travelport.AirportRegistration.UnitTests", "tests\Travelport.AirportRegistration.UnitTests\Travelport.AirportRegistration.UnitTests.csproj", "{883D9BAF-E102-4CE7-8FA8-03CE54AD330B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BB6C046C-4BBC-4900-A968-502EE7EFA79A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{C4154624-DBB7-4E66-AE7E-9C396E2F9594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4154624-DBB7-4E66-AE7E-9C396E2F9594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4154624-DBB7-4E66-AE7E-9C396E2F9594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883D9BAF-E102-4CE7-8FA8-03CE54AD330B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883D9BAF-E102-4CE7-8FA8-03CE54AD330B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883D9BAF-E102-4CE7-8FA8-03CE54AD330B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883D9BAF-E102-4CE7-8FA8-03CE54AD330B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +52,6 @@ Global
 		{84D19F3A-ADE0-4D8C-9C6D-DBA675A2B6E5} = {5101772B-3C81-42A4-839E-1087E53B3ED0}
 		{0C08F4C8-EA45-4C74-975C-DEA8B85FBAA6} = {5101772B-3C81-42A4-839E-1087E53B3ED0}
 		{C4154624-DBB7-4E66-AE7E-9C396E2F9594} = {5101772B-3C81-42A4-839E-1087E53B3ED0}
+		{883D9BAF-E102-4CE7-8FA8-03CE54AD330B} = {BB6C046C-4BBC-4900-A968-502EE7EFA79A}
 	EndGlobalSection
 EndGlobal
