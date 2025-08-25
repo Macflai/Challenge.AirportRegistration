@@ -10,11 +10,13 @@ namespace Travelport.AirportRegistration.WebApi.Controllers;
 public class PeopleController : ControllerBase
 {
     private readonly IPersonService _personService;
+    private readonly IAirportService _airportService;
     private readonly ILogger<PeopleController> _logger;
 
-    public PeopleController(IPersonService personService, ILogger<PeopleController> logger)
+    public PeopleController(IPersonService personService, IAirportService airportService, ILogger<PeopleController> logger)
     {
         _personService = personService;
+        _airportService = airportService;
         _logger = logger;
     }
 
@@ -60,6 +62,13 @@ public class PeopleController : ControllerBase
             return BadRequest(ModelState);
         }
 
+        var airoprt = await _airportService.GetAsync(personDto.AirportId);
+
+        if (airoprt == null)
+        {
+            return NotFound($"Airport with Id {personDto.AirportId} not found");
+        }
+
         var person = personDto.ToEntity();
 
         await _personService.CreateAsync(person);
@@ -82,6 +91,13 @@ public class PeopleController : ControllerBase
         if (person == null)
         {
             return NotFound();
+        }
+
+        var airoprt = await _airportService.GetAsync(personDto.AirportId);
+
+        if (airoprt == null)
+        {
+            return NotFound($"Airport with Id {personDto.AirportId} not found");
         }
 
         person.UpdateFromDto(personDto);
